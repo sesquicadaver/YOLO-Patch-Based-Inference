@@ -7,14 +7,17 @@ pwd = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(pwd, "patched_yolo_infer/README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
+# Read the license file content
+with codecs.open(os.path.join(pwd, "LICENSE.txt"), encoding="utf-8") as f:
+    license_text = f.read()
 
-VERSION = '1.3.8'
+VERSION = '1.3.10'
 DESCRIPTION = '''Patch-Based-Inference for detection/segmentation of small objects in images.'''
 
 setup(
     name="patched_yolo_infer",
     version=VERSION,
-    license="AGPL-3.0 license",
+    license="AGPL-3.0",
     url="https://github.com/Koldim2001/YOLO-Patch-Based-Inference",
     author="Koldim2001",
     description=DESCRIPTION,
@@ -23,7 +26,6 @@ setup(
     packages=find_packages(),
     python_requires=">=3.8",
     install_requires=[
-        'numpy<2.0',
         'tqdm',
         'opencv-python',
         'matplotlib',
@@ -35,6 +37,8 @@ setup(
         "YOLOv9",
         "YOLOv10",
         "YOLO11",
+        "YOLO12",
+        "YOLO26",
         "YOLO-seg",
         "YOLO-pose",
         "rtdetr",
